@@ -1,0 +1,23 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Retrieve Data
+        id: retrieve_data
+        run: echo "::set-output name=data::Hello, World!"
+
+      - name: Call Sub Workflow
+        uses: .github/workflows/sample2.yml
+        with:
+          data: ${{ steps.retrieve_data.outputs.data }}
