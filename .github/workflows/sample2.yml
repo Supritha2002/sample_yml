@@ -5,6 +5,7 @@ on:
     inputs:
       data:
         required: true
+        type : string
 
 jobs:
   sub_job:
