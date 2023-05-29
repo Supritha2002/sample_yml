@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Call Sub Workflow
-        uses: .github/workflows/sub_workflow.yml
+        uses: ./.github/workflows/sub_workflow.yml
         with:
           data: ${{ github.event.inputs.user_input }}
 
