@@ -11,5 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Process Data
-        run: echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
+
+      - name: User
+        uses: actions/checkout@v3
+    #     run: echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
+

@@ -12,4 +12,4 @@ jobs:
   main_job:
     uses: ./.github/workflows/sample2.yml
     with:
-      data: ${{ github.event.inputs.user_input }}
+     data: ${{ github.event.inputs.user_input }}
