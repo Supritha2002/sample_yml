@@ -1,18 +1,15 @@
 name: Sub Workflow
 
 on:
-  workflow_call:
-    inputs:
-      data:
-        required: true
+  workflow_run:
+    workflows: ["Main Workflow"]
+    types:
+      - completed
 
 jobs:
   sub_job:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: User
-        uses: actions/checkout@v3
-    #     run: echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
-
+      - name: Process Sub Workflow
+        run: echo "Sub Workflow called with input: ${{ github.event.workflow_run.inputs.user_input }}"
