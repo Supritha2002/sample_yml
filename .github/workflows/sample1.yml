@@ -10,20 +10,6 @@ on:
 
 jobs:
   main_job:
-<<<<<<< HEAD
     uses: ./.github/workflows/sample2.yml
     with:
       data: ${{ github.event.inputs.user_input }}
-=======
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Call Sub Workflow
-        uses: ./.github/workflows/sample2.yml
-        with:
-          data: ${{ github.event.inputs.user_input }}
-
->>>>>>> 96a2bce13eca929b6350d25523efc8533c7c61a2
