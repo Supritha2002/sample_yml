@@ -1,22 +1,19 @@
 name: Main Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      user_input:
+        description: 'User input'
+        required: true
 
 jobs:
   main_job:
     runs-on: ubuntu-latest
 
     steps:
-
-
-      - name: Retrieve Data
-        id: retrieve_data
-        run: echo "::set-output name=data::Hello, World!"
-
       - name: Call Sub Workflow
-        uses: ./.github/workflows/sample2.yml
+        uses: .github/workflows/sub_workflow.yml
         with:
-          data: ${{ steps.retrieve_data.outputs.data }}
+          data: ${{ github.event.inputs.user_input }}
+
