@@ -14,4 +14,7 @@ jobs:
 
       - name: User
         uses: actions/checkout@v3
-          run: echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
+
+
+      - name: ip_addr
+        run:echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
