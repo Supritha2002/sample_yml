@@ -12,4 +12,5 @@ jobs:
 
     steps:
       - name: Process Sub Workflow
-        run: echo "Sub Workflow called with input: ${{ github.event.workflow_run.inputs.user_input }}"
+        run: |
+          echo "Sub Workflow called with input: ${{ github.event.workflow_run.inputs.user_input }}"
