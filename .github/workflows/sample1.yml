@@ -8,11 +8,7 @@ on:
         required: true
 
 jobs:
-  main_job:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Trigger Sub Workflow
-        run: |
-          echo "Triggering Sub Workflow..."
-          gh workflow run sample2.yml --ref main --inputs user_input='${{ github.event.inputs.user_input }}'
+  call-workflow-passing-data:
+    uses: ./.github/workflows/sample2.yml
+    with:
+      data: ${{ github.event.inputs.user_input }}
