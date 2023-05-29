@@ -7,16 +7,16 @@ on:
         description: 'User input'
         required: true
 
+
 jobs:
   main_job:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
+      
+      - uses: actions/checkout@v2
       - name: Call Sub Workflow
         uses: ./.github/workflows/sample2.yml
         with:
           data: ${{ github.event.inputs.user_input }}
-
