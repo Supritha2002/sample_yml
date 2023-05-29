@@ -12,4 +12,5 @@ jobs:
 
     steps:
      - name: ip_addr
-        run:echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
+        run: |
+         echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
