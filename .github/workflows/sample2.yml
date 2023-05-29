@@ -11,10 +11,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: User
-        uses: actions/checkout@v3
-
-
-      - name: ip_addr
+     - name: ip_addr
         run:echo "Processing data: ${{ github.event.workflow_call.inputs.data }}"
